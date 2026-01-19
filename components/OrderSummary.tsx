@@ -26,7 +26,7 @@ export const OrderSummary = ({ order }: OrderSummaryProps) => {
       {/* Product */}
       <div className="flex items-center space-x-4 mb-6">
         <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
-          <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center">
+          <div className="w-12 h-12 bg-gradient-to-r from-orange-400 to-red-500 rounded-lg flex items-center justify-center">
             <TiShoppingCart size={24} color='white'/>
           </div>
         </div>

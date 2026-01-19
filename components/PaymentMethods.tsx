@@ -12,6 +12,7 @@ interface PaymentMethod {
   details?: string;
   bank?: string;
   last4?: string;
+  imageUrl?: string;
 }
 
 interface PaymentMethodsProps {
@@ -34,6 +35,7 @@ export const PaymentMethods = ({
       name: "Debit Card",
       bank: "Binance",
       last4: "4578",
+      imageUrl: "/binance.svg",
     },
     {
       id: "bybit-card",
@@ -41,6 +43,7 @@ export const PaymentMethods = ({
       name: "Credit Card",
       bank: "ByBit",
       last4: "4521",
+      imageUrl: "/Bybit.png",
     },
   ];
 
@@ -89,19 +92,12 @@ export const PaymentMethods = ({
                 >
                   <div className="flex items-center space-x-3 flex-1">
                     {/* Card Icon */}
-                    {/* <div className="w-8 h-6 bg-gradient-to-r from-orange-400 to-red-500 rounded flex items-center justify-center">
-                      {card.bank === 'Binance' ? (
-                        <div className="w-4 h-3 bg-white rounded-sm opacity-80"></div>
-                      ) : (
-                        <div className="text-white text-xs font-bold">V</div>
-                      )}
-                    </div> */}
 
                     <div className="w-8 h-6 bg-gradient-to-r from-orange-400 to-red-500 rounded flex items-center justify-center">
-                      {card.bank === "Binance" ? (
+                      {card.imageUrl ? (
                         <Image
-                          src="/binance.svg"
-                          alt="Binance"
+                          src={card.imageUrl}
+                          alt={card.bank || "Card"}
                           width={16}
                           height={16}
                           className="object-contain"
